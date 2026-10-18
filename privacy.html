@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rainarr — Privacy policy</title>
+<style>
+  :root { --bg: #f7f7f8; --fg: #1c1d21; --muted: #5d606b; --line: #dcdde2; --accent: #7c4dff; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #121317; --fg: #ececf1; --muted: #a3a6b3; --line: #2c2e36; --accent: #b39dff; }
+  }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 1.8rem; margin: 0 0 4px; }
+  h2 { font-size: 1.2rem; margin: 32px 0 8px; }
+  .meta, .note { color: var(--muted); font-size: .92rem; }
+  a { color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; font-size: .92rem; margin: 8px 0; }
+  th, td { text-align: left; vertical-align: top; padding: 8px; border-bottom: 1px solid var(--line); }
+  .wrap { overflow-x: auto; }
+</style>
+</head>
+<body>
+<main>
+<h1>Rainarr privacy policy</h1>
+<p class="meta">Effective September 23, 2026 · <a href="confidentialite.html">Version française</a> (the French version prevails) · <a href="legal-notice.html">Legal notice</a></p>
+
+<h2>In short</h2>
+<ul>
+  <li>Rainarr is a mobile app that controls <strong>your own</strong> media servers (Plex, Radarr, Sonarr, Prowlarr, Tautulli, Seerr, Maintainerr, torrent client).</li>
+  <li>Rainarr has <strong>no server</strong>: the publisher only receives what you choose to write to them, such as a problem report.</li>
+  <li>No advertising, no analytics, no crash reports sent.</li>
+  <li>Your credentials stay on your device, encrypted.</li>
+</ul>
+
+<h2>Who publishes Rainarr</h2>
+<p>Rainarr is published on a non-professional basis by an individual residing in France, under the name Rainarr. They are the controller of the processing described under “What the publisher processes”; their identity has been provided to the website host (see the <a href="legal-notice.html">legal notice</a>). For any question about your data: <a href="mailto:support@rainarr.app">support@rainarr.app</a>.</p>
+<p>Everything that happens on your device, and between your device and your servers, happens at your initiative and under your control: the publisher has no access to it.</p>
+
+<h2>What is stored on your device</h2>
+<div class="wrap"><table>
+  <tr><th>Data</th><th>Protection</th></tr>
+  <tr><td>Your server addresses, API keys, tokens, and the credentials of your torrent client and sources</td><td>Encrypted, with a key held by the system (Android Keystore, iOS Keychain)</td></tr>
+  <tr><td>If you join a server as a guest: the Seerr server address, session, display name (your email address if your account has no name) and avatar</td><td>Encrypted</td></tr>
+  <tr><td>Search history (last 8 movie and series searches)</td><td>Encrypted</td></tr>
+  <tr><td>Favorites, tracked downloads, home screen layout, chosen language, already opened packs of the card binder, Progress achievements and challenges, Memories diary ratings and notes, opened Collection cards, support level unlocked during a test</td><td>App-private storage</td></tr>
+  <tr><td>Your torrent client's ratio history (one reading per day, 90 days at most)</td><td>Encrypted</td></tr>
+  <tr><td>Cached posters and avatars</td><td>App-private storage, renewed automatically</td></tr>
+</table></div>
+<p>If you scan an invitation QR code, the camera is only requested at that moment. The image, from the camera or your gallery, is read on your device and then discarded: it is neither saved nor sent, only the server address is kept.</p>
+<p>In the guided setup, the “Paste” button only reads your clipboard when you tap it.</p>
+<p>This data does not leave your device through a backup: Rainarr is excluded from Google backup and phone-to-phone transfer, and its encryption key does not follow an iCloud backup.</p>
+
+<h2>What is sent, and to whom</h2>
+<p><strong>To your servers.</strong> Rainarr sends each server you configure what it needs to control it: its key or your credentials, your searches, and the movies and series you add, request or delete. You choose these servers; the publisher has no access to them. Credentials are only sent over an encrypted connection (HTTPS), or to your local network.</p>
+<p><strong>In the guided setup</strong>, when you ask for it: Rainarr looks for your services on your local network by querying its devices on the usual ports of this software, with a simple request that recognizes them, without credentials. It can also use your Plex sign-in to open a session on your Seerr server and read your services' keys there. If you give it a service's username and password, it uses them to read its key and then forgets them; only your torrent client's are kept, as in its settings.</p>
+<p><strong>In the background, if you turn on notifications</strong>: about every fifteen minutes, Rainarr asks those same servers what changed — your requests, new requests, finished downloads, services that stopped responding. Nothing else is contacted, and it all stays off until you turn on a notification.</p>
+<p><strong>If you report a problem</strong>: Rainarr prepares a report — version, phone model, language and recent errors, with no address or credential — and shows it to you in full. It only leaves if you share it, and only to where you choose to send it.</p>
+<p><strong>To a few third-party services</strong>, which also receive your device's IP address:</p>
+<div class="wrap"><table>
+  <tr><th>Service</th><th>Data</th><th>Why</th></tr>
+  <tr><td><a href="https://www.themoviedb.org/privacy-policy">TMDB</a> (The Movie Database)</td><td>Your searches, the titles you open, the app language and your device's country</td><td>Show the catalog, details and posters</td></tr>
+  <tr><td><a href="https://www.plex.tv/about/privacy-legal/">Plex</a> (plex.tv)</td><td>An identifier specific to your installation; signing in to your Plex account happens on Plex's website, in your browser; as a guest, the titles you choose to keep or watch, and the TMDB identifier of the pages you open</td><td>Sign you in as a guest to a server and read what your host shares with you; keep your Plex watchlist and find the pages you open in Plex's catalog; find your Plex server in the guided setup; show the accounts you share your server with</td></tr>
+  <tr><td><a href="https://policies.google.com/privacy">YouTube</a></td><td>The trailer's identifier</td><td>Show its thumbnail and open it when you tap it</td></tr>
+  <tr><td>Indexers you configure</td><td>Your searches; then fetching the torrent file from the address the indexer gives, which may be another site</td><td>Find a download and send it to your client</td></tr>
+</table></div>
+<p>Each of these services processes this data under its own policy.</p>
+
+<h2 id="guest">If you join a server as a guest</h2>
+<p>You sign in with your Plex account, on Plex's website. Rainarr then receives a token for your account and passes it to the Seerr server you are joining to open your session: <strong>that server thereby gets access to your Plex account</strong>, so only join one run by someone you trust. Rainarr <strong>keeps this token, encrypted, on your device</strong> for “My server”: with it, Rainarr asks Plex which servers are shared with you, reads on your host's server what they share with you (what you're watching, their latest additions, titles leaving soon) and, when you tap “Keep” or “My watchlist”, adds the title to your Plex watchlist. To do this, when you open a movie or show page, Rainarr asks Plex which title in its catalog matches it, using its TMDB identifier. It leaves with the server when you leave it. If that server allows new Plex users to sign in, this first sign-in <strong>creates an account in your name there</strong>, based on your Plex account; otherwise it is refused.</p>
+<p>That account belongs to the Seerr server, not to Rainarr. When you leave a server, Rainarr closes your session and erases what it kept about it on your device, but <strong>your account stays on the server</strong>: only the person who runs it can delete it, and you should ask them to.</p>
+
+<h2 id="publisher">What the publisher processes, and on what basis</h2>
+<div class="wrap"><table>
+  <tr><th>Processing</th><th>Data</th><th>Legal basis</th><th>Retention</th></tr>
+  <tr><td>Showing the movie and series catalog, with Rainarr's TMDB key</td><td>Your searches, the titles you open, your language, your country and your IP address, received by TMDB</td><td>Performance of the service you request (Article 6(1)(b) GDPR)</td><td>Nothing is kept by the publisher; TMDB applies its own policy</td></tr>
+  <tr><td>Signing you in to Plex, and to a server as a guest</td><td>Your installation identifier and what you send to Plex, received by Plex</td><td>Performance of the service you request (Article 6(1)(b))</td><td>Nothing is kept by the publisher; Plex applies its own policy</td></tr>
+  <tr><td>Showing a trailer thumbnail</td><td>The video identifier and your IP address, received by YouTube</td><td>Performance of the service you request (Article 6(1)(b))</td><td>Nothing is kept by the publisher</td></tr>
+  <tr><td>Answering you when you write to support</td><td>Your email address, your message and, if you attach it, the problem report</td><td>The publisher's legitimate interest in answering your requests and fixing the app (Article 6(1)(f))</td><td>3 years after our last exchange, then deleted</td></tr>
+  <tr><td>Hosting the rainarr.app website</td><td>Your IP address and browser, in the host's technical logs</td><td>Legitimate interest in running and securing the site (Article 6(1)(f))</td><td>Under the host's policy</td></tr>
+</table></div>
+<p>Mail written to support goes through <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a>'s routing service to the publisher's mailbox (Gmail). The website is hosted by <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub</a>.</p>
+
+<h2>Transfers outside the European Union</h2>
+<p>TMDB, Plex, Google (YouTube), GitHub and Cloudflare are based in, or process data in, the United States. Depending on each company, these transfers rely on the EU–US Data Privacy Framework or on the European Commission's standard contractual clauses; their policies, linked above, say which.</p>
+
+<h2>How long, and how to erase</h2>
+<ul>
+  <li>Your data stays on your device until you erase it.</li>
+  <li><strong>Settings → Erase all data</strong> removes everything Rainarr keeps on the device and closes your guest sessions. Nothing is deleted on your servers.</li>
+  <li>Uninstalling the app also erases its data.</li>
+  <li>Your exchanges with support are deleted 3 years after the last message, or sooner if you ask.</li>
+</ul>
+
+<h2>Your rights</h2>
+<p>You have the right to access, rectify, erase, restrict and port your data, to object to processing based on legitimate interest, and to set instructions for what happens to it after your death. What Rainarr keeps on your device can be viewed and erased directly in the app. For what the publisher holds (your exchanges with support), write to <a href="mailto:support@rainarr.app">support@rainarr.app</a>: you will get an answer within one month. For data held by your servers or by third-party services, contact their administrator or publisher. You may also lodge a complaint with the <a href="https://www.cnil.fr/fr/plaintes">CNIL</a>, the French data protection authority.</p>
+
+<h2>Minors</h2>
+<p>Rainarr is intended for people aged 18 and over.</p>
+
+<h2>Changes</h2>
+<p>Any change to this policy is published on this page, with its effective date.</p>
+<p class="note">History: September 23, 2026 — first version. September 23, 2026 — controller and legal bases of the processing, support by email, transfers outside the European Union, full list of rights, warning about a guest's Plex token, support level unlocked during a test; reading a key with the camera removed.</p>
+</main>
+</body>
+</html>
