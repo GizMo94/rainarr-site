@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rainarr — Privacy policy</title>
 <style>
-  :root { --bg: #f7f7f8; --fg: #1c1d21; --muted: #5d606b; --line: #dcdde2; --accent: #7c4dff; }
+  :root { --bg: #F2F2EE; --fg: #17181C; --muted: #4A4D55; --line: #D9D9D3; --accent: #17181C; }
   @media (prefers-color-scheme: dark) {
-    :root { --bg: #121317; --fg: #ececf1; --muted: #a3a6b3; --line: #2c2e36; --accent: #b39dff; }
+    :root { --bg: #17181C; --fg: #F5F5F2; --muted: #C9CBD1; --line: #3A3E47; --accent: #F5F5F2; }
   }
   body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
   main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
@@ -23,7 +23,7 @@
 <body>
 <main>
 <h1>Rainarr privacy policy</h1>
-<p class="meta">Effective September 23, 2026 · <a href="confidentialite.html">Version française</a> (the French version prevails) · <a href="legal-notice.html">Legal notice</a></p>
+<p class="meta">Effective October 20, 2026 · <a href="confidentialite.html">Version française</a> (the French version prevails) · <a href="legal-notice.html">Legal notice</a></p>
 
 <h2>In short</h2>
 <ul>
@@ -43,31 +43,35 @@
   <tr><td>Your server addresses, API keys, tokens, and the credentials of your torrent client and sources</td><td>Encrypted, with a key held by the system (Android Keystore, iOS Keychain)</td></tr>
   <tr><td>If you join a server as a guest: the Seerr server address, session, display name (your email address if your account has no name) and avatar</td><td>Encrypted</td></tr>
   <tr><td>Search history (last 8 movie and series searches)</td><td>Encrypted</td></tr>
-  <tr><td>Favorites, tracked downloads, home screen layout, chosen language, already opened packs of the card binder, Progress achievements and challenges, Memories diary ratings and notes, opened Collection cards, support level unlocked during a test</td><td>App-private storage</td></tr>
+  <tr><td>Favorites, tracked downloads, home screen layout, chosen language and appearance, already opened packs of the card binder, Progress achievements and challenges, Memories diary ratings and notes, opened Collection cards, support level unlocked during a test, progress of a surprise hidden in the app, steelbooks chosen, movies unwrapped and requests already accepted on your first visit to your guest Video club, format of each film in your Video library, chosen display for the poster of entries, summary of each gift for the home screen widgets (level, challenges, latest ticket, screenings of the year, latest arrivals in your Video library, cards in your binder)</td><td>App-private storage</td></tr>
   <tr><td>Your torrent client's ratio history (one reading per day, 90 days at most)</td><td>Encrypted</td></tr>
+  <tr><td>The layout you chose for your requests and issues (list, cards or stack)</td><td>Encrypted</td></tr>
+  <tr><td>The last version whose updates you have seen</td><td>Encrypted</td></tr>
   <tr><td>Cached posters and avatars</td><td>App-private storage, renewed automatically</td></tr>
 </table></div>
 <p>If you scan an invitation QR code, the camera is only requested at that moment. The image, from the camera or your gallery, is read on your device and then discarded: it is neither saved nor sent, only the server address is kept.</p>
-<p>In the guided setup, the “Paste” button only reads your clipboard when you tap it.</p>
+<p>Your clipboard is only read when you ask: with the “Paste” button of the guided setup, or with “Paste a magnet link” in Transfers, which sends that link to your torrent client.</p>
 <p>This data does not leave your device through a backup: Rainarr is excluded from Google backup and phone-to-phone transfer, and its encryption key does not follow an iCloud backup.</p>
 
 <h2>What is sent, and to whom</h2>
 <p><strong>To your servers.</strong> Rainarr sends each server you configure what it needs to control it: its key or your credentials, your searches, and the movies and series you add, request or delete. You choose these servers; the publisher has no access to them. Credentials are only sent over an encrypted connection (HTTPS), or to your local network.</p>
+<p><strong>With Maintainerr</strong>, Rainarr writes your rule and the dates of the next departures into the description of its collections, on your Plex server, so your guests can read them; it does so again every evening if you turn on the departures reminder, and keeps your Plex address and token for that with the notification settings, encrypted. It also reads, on your Seerr server, each user's watchlist, to show you who keeps a title that is leaving: those lists and names stay on screen, nothing is kept.</p>
 <p><strong>In the guided setup</strong>, when you ask for it: Rainarr looks for your services on your local network by querying its devices on the usual ports of this software, with a simple request that recognizes them, without credentials. It can also use your Plex sign-in to open a session on your Seerr server and read your services' keys there. If you give it a service's username and password, it uses them to read its key and then forgets them; only your torrent client's are kept, as in its settings.</p>
 <p><strong>In the background, if you turn on notifications</strong>: about every fifteen minutes, Rainarr asks those same servers what changed — your requests, new requests, finished downloads, services that stopped responding. Nothing else is contacted, and it all stays off until you turn on a notification.</p>
 <p><strong>If you report a problem</strong>: Rainarr prepares a report — version, phone model, language and recent errors, with no address or credential — and shows it to you in full. It only leaves if you share it, and only to where you choose to send it.</p>
 <p><strong>To a few third-party services</strong>, which also receive your device's IP address:</p>
 <div class="wrap"><table>
   <tr><th>Service</th><th>Data</th><th>Why</th></tr>
-  <tr><td><a href="https://www.themoviedb.org/privacy-policy">TMDB</a> (The Movie Database)</td><td>Your searches, the titles you open, the app language and your device's country</td><td>Show the catalog, details and posters</td></tr>
-  <tr><td><a href="https://www.plex.tv/about/privacy-legal/">Plex</a> (plex.tv)</td><td>An identifier specific to your installation; signing in to your Plex account happens on Plex's website, in your browser; as a guest, the titles you choose to keep or watch, and the TMDB identifier of the pages you open</td><td>Sign you in as a guest to a server and read what your host shares with you; keep your Plex watchlist and find the pages you open in Plex's catalog; find your Plex server in the guided setup; show the accounts you share your server with</td></tr>
+  <tr><td><a href="https://www.themoviedb.org/privacy-policy">TMDB</a> (The Movie Database)</td><td>Your searches, the titles you open, the movies you requested as a guest, the titles that recently arrived at your host's when you open your guest home, the app language and your device's country</td><td>Show the catalog, details and posters</td></tr>
+  <tr><td><a href="https://www.plex.tv/about/privacy-legal/">Plex</a> (plex.tv)</td><td>An identifier specific to your installation; signing in to your Plex account happens on Plex's website, in your browser; as a guest, the titles you choose to keep or watch, and the TMDB identifier of the pages and Video club cases you open; the address of a poster your Plex server doesn't have yet and fetches from Plex, without your token</td><td>Sign you in as a guest to a server and read what your host shares with you; keep your Plex watchlist and find the pages you open in Plex's catalog; find your Plex server in the guided setup; show the accounts you share your server with; show those posters</td></tr>
   <tr><td><a href="https://policies.google.com/privacy">YouTube</a></td><td>The trailer's identifier</td><td>Show its thumbnail and open it when you tap it</td></tr>
   <tr><td>Indexers you configure</td><td>Your searches; then fetching the torrent file from the address the indexer gives, which may be another site</td><td>Find a download and send it to your client</td></tr>
 </table></div>
 <p>Each of these services processes this data under its own policy.</p>
 
 <h2 id="guest">If you join a server as a guest</h2>
-<p>You sign in with your Plex account, on Plex's website. Rainarr then receives a token for your account and passes it to the Seerr server you are joining to open your session: <strong>that server thereby gets access to your Plex account</strong>, so only join one run by someone you trust. Rainarr <strong>keeps this token, encrypted, on your device</strong> for “My server”: with it, Rainarr asks Plex which servers are shared with you, reads on your host's server what they share with you (what you're watching, their latest additions, titles leaving soon) and, when you tap “Keep” or “My watchlist”, adds the title to your Plex watchlist. To do this, when you open a movie or show page, Rainarr asks Plex which title in its catalog matches it, using its TMDB identifier. It leaves with the server when you leave it. If that server allows new Plex users to sign in, this first sign-in <strong>creates an account in your name there</strong>, based on your Plex account; otherwise it is refused.</p>
+<p>You sign in with your Plex account, on Plex's website. Rainarr then receives a token for your account and passes it to the Seerr server you are joining to open your session: <strong>that server thereby gets access to your Plex account</strong>, so only join one run by someone you trust. Rainarr <strong>keeps this token, encrypted, on your device</strong> for the guest space: with it, Rainarr asks Plex which servers are shared with you, reads on your host's server the titles leaving soon and, when you tap “Keep” or “My watchlist”, adds the title to your Plex watchlist. <strong>Your host sees the titles on that watchlist that are about to leave their server, with your name</strong>: that is how your vote counts. Their app reads them on their Seerr server, which already knows your watchlist. To do this, when you open a movie or show page, Rainarr asks Plex which title in its catalog matches it, using its TMDB identifier. It leaves with the server when you leave it. If that server allows new Plex users to sign in, this first sign-in <strong>creates an account in your name there</strong>, based on your Plex account; otherwise it is refused.</p>
+<p>In "My requests", <strong>the title you search for is sent to your host's Seerr server</strong>, which passes it on to TMDB to find matching movies and shows: your host can therefore see it. When you open your home, Rainarr also reads on that server the titles that most recently became available, then their details on TMDB; nothing about you is sent beyond your session.</p>
 <p>That account belongs to the Seerr server, not to Rainarr. When you leave a server, Rainarr closes your session and erases what it kept about it on your device, but <strong>your account stays on the server</strong>: only the person who runs it can delete it, and you should ask them to.</p>
 
 <h2 id="publisher">What the publisher processes, and on what basis</h2>
@@ -100,7 +104,7 @@
 
 <h2>Changes</h2>
 <p>Any change to this policy is published on this page, with its effective date.</p>
-<p class="note">History: September 23, 2026 — first version. September 23, 2026 — controller and legal bases of the processing, support by email, transfers outside the European Union, full list of rights, warning about a guest's Plex token, support level unlocked during a test; reading a key with the camera removed.</p>
+<p class="note">History: September 23, 2026 — first version. September 29, 2026 — controller and legal bases of the processing, support by email, transfers outside the European Union, full list of rights, warning about a guest's Plex token, support level unlocked during a test; reading a key with the camera removed. September 30, 2026 — progress of a surprise hidden in the app, kept on the phone. October 1, 2026 — Maintainerr rule and departure dates written to Plex for guests; guests' watchlist shown to their host. October 6, 2026 — guest Video club: steelbooks chosen and movies unwrapped kept on the phone, title and poster of requested movies read from TMDB. October 7, 2026 — Video club: one stamp per request your host accepts, the ones already accepted on your first visit kept on the phone; request for a better copy sent as an issue to your host's server; opened case looked up in Plex's catalog, like a page. Video library: format of each film kept on the phone; “Upgrade” changes a film's quality profile in your Radarr; a guest's issue asking for a better copy is closed on your Seerr server when it arrives. October 14, 2026 — chosen display for the poster of entries and gift summaries for the home screen widgets, kept on the phone; as a guest with the Video library unlocked, the film of an entry looked up on your host's Plex to read its file quality. October 16, 2026 — as a guest, what you're watching and the latest additions are no longer read from your host's Plex server; your home reads instead, on their Seerr server, the titles that most recently became available. October 19, 2026 — posters your Plex server fetches from Plex are now listed: they're sent without your token; the image cache no longer keeps any token or key.</p>
 </main>
 </body>
 </html>
